@@ -8,5 +8,5 @@ class QuestionAnswerService:
 
     def convert_text_to_embedding(self, text):
         embedding = self.embedding_model.encode(text)
-        #print(f"Embedding gerado para '{text}': {embedding}")  # Adicionado para verificar o embedding gerado
+        print(f"Embedding gerado para '{text}': {embedding[0]:.16f}") # Adicionado para verificar o embedding gerado
         return embedding

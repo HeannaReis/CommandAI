@@ -9,13 +9,6 @@ from voice_command_hendler import VoiceCommandHandler
 from question_answers_service import QuestionAnswerService
 from conversation_history import ConversationHistory
 from gpt_communication.gemini_gpt import GenerativeModelHandler
-import logging
-
-logging.basicConfig(
-    level=logging.WARNING,
-    format='%(levelname)s: %(message)s',
-    handlers=[logging.StreamHandler()]
-)
 
 class MainApp:
     def __init__(self, model):
@@ -44,7 +37,7 @@ class MainApp:
 
                 if command:
                     # Log da pergunta antes de enviar para o interpretador
-                    logging.info(f"Pergunta recebida: {command}")
+                    print(f"Pergunta recebida: {command}")
                     text_response = self.command_interpreter.interpret_command(command, meeting)
                     if text_response:
                         print(f"Resposta: {text_response}")

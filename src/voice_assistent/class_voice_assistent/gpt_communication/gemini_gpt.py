@@ -4,12 +4,6 @@ from dotenv import load_dotenv
 from typing import Optional
 import logging
 
-logging.basicConfig(
-    level=logging.WARNING,
-    format='%(levelname)s: %(message)s',
-    handlers=[logging.StreamHandler()]
-)
-
 class GenerativeModelHandler:
     def __init__(self, model_name: str):
         self.model_name: str = model_name
@@ -46,7 +40,7 @@ class GenerativeModelHandler:
                 "context": {context},
                 "meeting": {meeting}
             '''
-            logging.debug(f"Enviando requisição para a API GenAI: {request_data}")
+            print(f"Enviando requisição para a API GenAI: {request_data}")
 
             response = self.model.generate_content(request_data)
             return response.text
