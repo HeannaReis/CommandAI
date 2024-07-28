@@ -4,7 +4,7 @@ import spacy
 from collections import deque
 
 class APIConfig:
-    apiKey = "6UlOOoY/kkmprunma/qNDg"
+    apiKey = "API_KEY"
     url = "https://gpt-templates.saiapplications.com"
     headers = {"X-Api-Key": apiKey}
 
